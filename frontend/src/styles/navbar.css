@@ -1,0 +1,220 @@
+/* frontend/src/styles/navbar.css */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    box-shadow: var(--shadow-md);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+  
+  /* Logo */
+  .navbar-logo a {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    letter-spacing: -0.5px;
+    transition: transform var(--transition-fast);
+  }
+  
+  .navbar-logo a:hover {
+    transform: scale(1.05);
+  }
+  
+  .mylogo {
+    color: #fbbf24;
+    font-weight: 600;
+  }
+  
+  /* Navigation Links */
+  .navbar-links {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+    align-items: center;
+  }
+  
+  .navbar-links li a {
+    color: white;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+  }
+  
+  .navbar-links li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  /* Right Side - Auth & Cart */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+  }
+  
+  .navbar-auth {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .login-link {
+    color: white;
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+  }
+  
+  .login-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .register-btn {
+    background-color: white;
+    color: var(--primary-color);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background-color: var(--bg-secondary);
+  }
+  
+  /* Cart Icon */
+  .cart-icon {
+    position: relative;
+    color: white;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cart-icon:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .cart-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background-color: var(--error);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  /* User Menu */
+  .user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+  
+  .user-name {
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  
+  .logout-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all var(--transition-fast);
+  }
+  
+  .logout-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  /* ============================================
+     RESPONSIVE DESIGN
+     ============================================ */
+  @media (max-width: 968px) {
+    .navbar {
+      padding: var(--spacing-md);
+    }
+    
+    .navbar-links {
+      gap: var(--spacing-md);
+    }
+    
+    .navbar-links li a {
+      font-size: 0.9rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .navbar-logo a {
+      font-size: 1.5rem;
+    }
+    
+    .navbar-links {
+      order: 3;
+      width: 100%;
+      justify-content: center;
+      margin-top: var(--spacing-sm);
+      gap: var(--spacing-sm);
+    }
+    
+    .navbar-links li a {
+      font-size: 0.85rem;
+      padding: var(--spacing-xs);
+    }
+    
+    .user-name {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-links {
+      flex-wrap: wrap;
+      gap: var(--spacing-xs);
+    }
+    
+    .navbar-auth {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+    
+    .register-btn {
+      padding: var(--spacing-xs) var(--spacing-md);
+      font-size: 0.85rem;
+    }
+  }
